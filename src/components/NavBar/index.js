@@ -63,7 +63,7 @@ const NavBar = () => {
               </Nav.Link>
             </LinkContainer>
             <LinkContainer  to='/Contact'>
-              <Nav.Link className='header__text Link' to='/Contact'>
+              <Nav.Link className='header__text Link' to='/Contacto'>
                 Contactanos
               </Nav.Link>
             </LinkContainer>

@@ -26,9 +26,9 @@ const CategoryList =()=> {
     
         const filterCategory =(category)=> {
            
-            if(category==='All'){
+            if(category ==='All'){
                 setArticle(articles)
-                return 
+                return
             }
             const filterData =articles.filter(article =>article.category===category)
             setArticle(filterData)
@@ -37,10 +37,10 @@ const CategoryList =()=> {
             const [categories, setCategories]= useState(allCategories);
     
         return (
-            <div>
+            <div key={allCategories.id}>
                 {categories.map((category) => {
                         return (
-                            <div>
+                            <div key={allCategories.id}>
                                  <Link to={`/category/${category.id}`}> 
                                     <ButtonList categories={allCategories} filterCategory={filterCategory}>
                                     </ButtonList>
@@ -48,7 +48,7 @@ const CategoryList =()=> {
                             </div>
                     
                         )})}
-                <div className="card-list">
+                <div className="card-list"  key={articles.id}>
                     {articles.map((article) => {
                         return (
                             <div  key={article.id}>
