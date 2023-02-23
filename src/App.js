@@ -10,6 +10,8 @@ import Home from './pages/Home/index'
  import ItemListContainer from './pages/ItemListContainer/index';
 import ItemDetailContainer from './pages/ItemDetailContainer/index'
 import ItemListContainerCat from './pages/ItemListContainerCat';
+import CursoDetailContainer from './pages/CursoDetailContainer/index'
+import CursoCategory from './pages/CursoCategory/index'
 import Curso from './pages/Cursos/index'
 import Servicios from './pages/Servicios/index'
 import Contacto from './pages/Contacto/index'
@@ -24,6 +26,8 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>}/>
          <Route path='/Curso' element={<Curso/>}/>
+         <Route path='/Cursocategory/:id' element= {<CursoCategory/>}/>
+         <Route path='/Curso/:id' element= {<CursoDetailContainer/>}/>
          <Route path='/Servicios' element={<Servicios/>}/>
          <Route path='/Cosmeticos' element={<ItemListContainer/>}/>
          <Route path='/category/:id' element= {<ItemListContainerCat/>}/>
