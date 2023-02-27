@@ -1,12 +1,14 @@
 import React, {useEffect,useState} from "react";
-import './style.css'
-import { Link } from "react-router-dom";
+/* import './style.css' */
+/*  import { Link } from "react-router-dom";  */
 import { useParams } from "react-router-dom";
-import CharacterCard from '../CharacterCard/index';
-import ButtonList from "../ButtonList";
+import ButtonListCurso from "../ButtonListCurso";
+/* import CharacterCard from "../CharacterCard"; */
+import ArticlesList from "../ArticlesList";
 
 const CharacterList =()=> {
-    const [cursos, setCurso]= useState([]);
+
+    const [articles, setArticles]= useState([]);
 
     let { id }= useParams();
 
@@ -15,16 +17,47 @@ const CharacterList =()=> {
         {
             headers : { 
                 'Content-Type': 'application/json',
-                Accept: 'application/json'
+                'Accept': 'application/json'
                }         
         }
         )
         .then(response =>(response.json())         
         )
-        .then(json =>  setCurso(json))     
+        .then(json => setArticles(json))     
     }, [id]);
-   /*  return (
-        <div>
+
+    const AllCategory = [
+        'All',...new Set(articles.map(article => article.category)),];
+                    console.log(AllCategory);
+ 
+    const [categorias, setCategorias]=useState(AllCategory);
+
+    const filterCategoria = (category)=> {
+       if(category === 'All'){
+        setArticles(AllCategory)
+        console.log((articles));
+        return
+       }
+        const filterData = articles.filter( article => article.category === category);
+        /* console.log(filterData); */
+        setArticles(filterData)
+    }
+    return (
+        <>
+        <div key={id}>
+                 <ButtonListCurso key={id} categorias={AllCategory} filterCategoria={filterCategoria}>
+                 </ButtonListCurso>
+            <ArticlesList data ={articles} key={id} />
+        </div>
+{/*         <div>
+              <Link to={`/category/Master`}> 
+                 <ButtonListCurso categorias={AllCategory} filterCategoria={filterCategoria}>
+                 </ButtonListCurso>
+             </Link>
+            <ArticlesList data ={cursos} key={id} />
+        </div> */}
+        </>
+     /*    <div>
             <div className="cards">
                 <div className="card-list">
                     {cursos.map((curso) => {
@@ -38,14 +71,15 @@ const CharacterList =()=> {
                         })
                     }
                 </div> 
-            </div>        
-        </div>
+            </div>         
+        </div> */
  
-    ) */
-    const allCategories = ['All',
-    ...new Set(cursos.map((curso) => (curso.category)))];
+    )
 
-  
+ 
+
+ 
+                    /* 
 
     const filterCategory =(category)=> {
        
@@ -65,8 +99,8 @@ const CharacterList =()=> {
                     return (
                         <div key={allCategories.id}>
                              <Link to={`/Cursocategory/${category.id}`}> 
-                                <ButtonList categories={allCategories} filterCategory={filterCategory}>
-                                </ButtonList>
+                                <ButtonListCurso categories={allCategories} filterCategory={filterCategory}>
+                                </ButtonListCurso>
                             </Link>
                         </div>
                 
@@ -84,7 +118,7 @@ const CharacterList =()=> {
                 }
             </div>
         </div>
-)
+) */
 }
 
 export default CharacterList;

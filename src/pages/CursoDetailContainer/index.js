@@ -21,7 +21,7 @@ const CursoDetailContainer =()=> {
         )
         .then(json =>  setCursos(json))     
     }, [id]);
-    
+            
         return (
                  
             <div >

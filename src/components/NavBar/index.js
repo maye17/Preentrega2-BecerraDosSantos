@@ -57,8 +57,8 @@ const NavBar = () => {
                 Servicios
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/Cosmeticos'> 
-              <Nav.Link className='header__text Link'to='/Cosmeticos'>
+            <LinkContainer to='/Indumentaria'> 
+              <Nav.Link className='header__text Link'to='/Indumentaria'>
                 Indumentaria
               </Nav.Link>
             </LinkContainer>

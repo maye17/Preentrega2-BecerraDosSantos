@@ -10,7 +10,7 @@ const CategoryList =()=> {
     const [articles, setArticle]= useState([]);
  
 
-    const datos = "https://fakestoreapi.com/products/";
+    const datos = `https://fakestoreapi.com/products/`;
 
     useEffect(()=> {
         fetch(datos)
@@ -26,11 +26,11 @@ const CategoryList =()=> {
     
         const filterCategory =(category)=> {
            
-            if(category ==='All'){
+            if(categoria ==='All'){
                 setArticle(articles)
                 return
             }
-            const filterData =articles.filter(article =>article.category===category)
+            const filterData =articles.filter(article =>article.categoria===categoria)
             setArticle(filterData)
             } 
 
@@ -38,10 +38,10 @@ const CategoryList =()=> {
     
         return (
             <div key={allCategories.id}>
-                {categories.map((category) => {
+                {categories.map((categoria) => {
                         return (
                             <div key={allCategories.id}>
-                                 <Link to={`/category/${category.id}`}> 
+                                 <Link to={`/category/${categoria.category}`}> 
                                     <ButtonList categories={allCategories} filterCategory={filterCategory}>
                                     </ButtonList>
                                 </Link>

@@ -2,7 +2,7 @@ import React from "react";
 
 const ButtonList = ({categories, filterCategory})=> {
     return(
-        <div className="categoires">
+        <div className="categories">
             {categories.map(category => (
                 <button
                 key={category}

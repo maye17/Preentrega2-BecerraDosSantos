@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router';
-import axios from "axios";
-import CharacterCard from '../../components/CharacterCard/index';
+/* import axios from "axios"; */
 import './style.css'
+import CharacterCard from '../../components/CharacterCard';
+
 
 
 const ItemDetailContainer =()=> {
-    const [product, setProduct] =useState({});
+    const [article, setArticle] =useState({});
+
 
     let { id }= useParams();
 
        useEffect(()=>{
-        axios(`https://fakestoreapi.com/products/${id}`).then ((res) => setProduct(res.data)
-        );
+        fetch('/json/data.json/',
+        {
+            headers : { 
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+               }         
+        }
+        )
+        .then(response =>(response.json())         
+        )
+        .then(json =>  setArticle(json))     
     }, [id]);
-
+   
     return (
              
         <div >
             <div className="cards">
                 <div className="card-list"></div>
-                    <div className='character-detail' key={product.id} >
-                    <CharacterCard data = {product} />
+                    <div className='character-detail' key={article.id} >
+                    <CharacterCard data = {article} />
                 </div>
             </div>
         </div>

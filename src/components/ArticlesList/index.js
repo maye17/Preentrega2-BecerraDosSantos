@@ -1,23 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import './style.css'
 
-const ArticlesList =({articles})=> {
+const ArticlesList =({data})=> {
+    const prince_sign='$';
     return(
-        <div className="article-list">
-            {articles.map(article =>
-                <div className="article-container" key={article.id}>
-                    <div className="img-container">
-                        <img src={article.image} alt={article.title} />
-                    </div>
-                    <div className="article-body">
-                        <h2>{article.title}</h2>
-                        <p>{article.description}</p>
-                        <div className="article-footer">
-                            <span>{article.date}</span>
-                            <span>{article.reading}</span>
-                        </div>
-
-                    </div>
-                </div>)}
+        <div>
+            {data.map(dato =>
+                <section className="cards" key={dato.id}>
+                <Link to={`/detail/${dato.id}`} >
+                <div className="cards__container">
+                  <article className="cards__container-banner">
+                  <p>{dato.category}</p>
+                    <img src={dato.image} alt="imagen"/>
+                    <h2>{dato.name}</h2>
+                    <p>{dato.description}</p>
+                    <p>{prince_sign} {dato.price}</p>
+                    <button>Saber más</button>
+                  </article>
+                </div>
+                </Link>
+              </section>)}
         </div>
     )
 }

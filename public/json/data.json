@@ -21,7 +21,7 @@
         "image":"../image/maquillaje_novia.jpg",
         "price":370,
         "description":"Master en Novias",
-        "categories":"Master"
+        "category":"Master"
      },
      {
         "id":4,

@@ -2,24 +2,22 @@ import React from "react";
 import './style.css'
 
 
-const CategoryCard = ({articles})=> {
+const CategoryCard = ({data})=> {
     const prince_sign='$';
     return (
         <div>
-           {articles.map(article => (
-             <section className="cards" key={article.id}>
+             <section className="cards" key={data.id}>
               <div className="cards__container">
                 <article className="cards__container-banner">
-                <p>{article.categoria}</p>
-                  <img src={article.image} alt={article.title}/>
-                  <h2>{article.title}</h2>
-                  <p>{article.description}</p>
-                  <p>{prince_sign} {article.price}</p>
+                <p>{data.category}</p>
+                  <img src={data.image} alt={data.name}/>
+                  <h2>{data.name}</h2>
+                  <p>{data.description}</p>
+                  <p>{prince_sign} {data.price}</p>
                   <button>Saber más</button>
                 </article>
               </div>
             </section>
-           ))}
         </div>
     )
 }

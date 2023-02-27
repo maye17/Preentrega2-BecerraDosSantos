@@ -1,0 +1,18 @@
+.btn-category {
+    color: #e7e7fa;
+    display: inline-block;
+    margin: 18px;
+    padding: 12px;
+    text-align: center;
+    border: 3px black solid;
+    border-radius: 8px;
+    border-color: azure;
+    background: #440239;
+    font-size: 18px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: oblique;
+    font-weight: bold; }
+    .btn-category:hover {
+      color: #2d0223;
+      background: white;
+      border-color: #f106a2; }
