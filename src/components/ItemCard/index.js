@@ -2,8 +2,9 @@ import React from "react";
 import './style.css'
 
 
-const CategoryCard = ({data})=> {
+const ItemCard = ({data})=> {
     const prince_sign='$';
+    console.log(data);
     return (
         <div>
              <section className="cards" key={data.id}>
@@ -14,7 +15,6 @@ const CategoryCard = ({data})=> {
                   <h2>{data.name}</h2>
                   <p>{data.description}</p>
                   <p>{prince_sign} {data.price}</p>
-                  <button>Saber más</button>
                 </article>
               </div>
             </section>
@@ -22,4 +22,4 @@ const CategoryCard = ({data})=> {
     )
 }
 
-export default CategoryCard;
+export default ItemCard;

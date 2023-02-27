@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router';
-/* import axios from "axios"; */
 import './style.css'
-import CharacterCard from '../../components/CharacterCard';
+/* import CharacterCard from '../../components/CharacterCard'; */
+import ItemCard from '../../components/ItemCard';
 
 
 
@@ -32,7 +32,7 @@ const ItemDetailContainer =()=> {
             <div className="cards">
                 <div className="card-list"></div>
                     <div className='character-detail' key={article.id} >
-                    <CharacterCard data = {article} />
+                    <ItemCard data = {article} />
                 </div>
             </div>
         </div>

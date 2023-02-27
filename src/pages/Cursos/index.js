@@ -1,9 +1,7 @@
 import React from "react";
 import CharacterList from "../../components/CharacterList";
-/* import ItemListContainer from "../../components/ItemListContainer"; */
 
-
-const Curso = ()=> {
+const ItemListContainer = ()=> {
     return(
         <div>
             <h1>Cursos</h1>
@@ -12,4 +10,4 @@ const Curso = ()=> {
     )
 }
 
-export default Curso;
+export default ItemListContainer;
