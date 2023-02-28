@@ -4,7 +4,7 @@ import CharacterList from '../../components/CharacterList/index'
 const Master =() => {
   return (
     <div>     
-      <h1 className="text-center m-2">Maquillaje</h1>
+      <h1 className="text-center m-2">Master</h1>
       <CharacterList category="Master"/>
     </div>
   )

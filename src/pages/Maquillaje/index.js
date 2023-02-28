@@ -3,7 +3,7 @@ import React from 'react'
 import CharacterList from '../../components/CharacterList'
 
 const Maquillaje =() => {
-  console.log('Maquillaje')
+
   return (
     <div>     
       <h1 className="text-center m-2">Maquillaje</h1>
