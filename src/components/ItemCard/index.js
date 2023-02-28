@@ -3,11 +3,11 @@ import './style.css'
 
 
 const ItemCard = ({data})=> {
-    const prince_sign='$';
-    console.log(data);
+  console.log({data});
+    const prince_sign='$'
     return (
         <div>
-             <section className="cards" key={data.id}>
+             <section className="cards">
               <div className="cards__container">
                 <article className="cards__container-banner">
                 <p>{data.category}</p>

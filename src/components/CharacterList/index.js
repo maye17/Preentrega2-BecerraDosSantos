@@ -9,10 +9,11 @@ import ArticlesList from "../ArticlesList";
 const CharacterList =()=> {
 
     const [articles, setArticles]= useState([]);
+    
 
     let { id }= useParams();
 
-       useEffect(()=>{
+      useEffect(()=>{
         fetch('/json/data.json',
         {
             headers : { 
@@ -27,17 +28,12 @@ const CharacterList =()=> {
     }, [id]);
 
     const AllCategory = [
-        'All',...new Set(articles.map(article => article.category)),];
+        ...new Set(articles.map(article => article.category)),];
                     console.log(AllCategory);
  
     const [categorias, setCategorias]=useState(AllCategory);
 
     const filterCategoria = (category)=> {
-       if(category === 'All'){
-        setArticles(AllCategory)
-        console.log((articles));
-        return
-       }
         const filterData = articles.filter( article => article.category === category);
         /* console.log(filterData); */
         setArticles(filterData)

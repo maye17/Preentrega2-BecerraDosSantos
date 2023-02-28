@@ -6,6 +6,8 @@ const ArticlesList =({data})=> {
     const prince_sign='$';
     return(
         <div>
+           <div className='cards'>
+        <div className='card-list'>
             {data.map(dato =>
                 <section className="cards" key={dato.id}>
                 <Link to={`/detail/${dato.id}`} >
@@ -20,7 +22,10 @@ const ArticlesList =({data})=> {
                   </article>
                 </div>
                 </Link>
-              </section>)}
+              </section>
+              )}
+              </div>
+              </div>
         </div>
     )
 }
