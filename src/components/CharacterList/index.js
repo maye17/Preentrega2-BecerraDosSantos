@@ -27,14 +27,17 @@ const CharacterList =()=> {
         .then(json => setArticles(json))     
     }, [id]);
 
-    const AllCategory = [
+    const AllCategory = ['All',
         ...new Set(articles.map(article => article.category)),];
                     console.log(AllCategory);
  
     const [categorias, setCategorias]=useState(AllCategory);
 
     const filterCategoria = (category)=> {
-        const filterData = articles.filter( article => article.category === category);
+        if(category =='All'){
+            setArticles(articles)
+        }
+        const filterData = articles.filter( article => article.category == category);
         /* console.log(filterData); */
         setArticles(filterData)
     }

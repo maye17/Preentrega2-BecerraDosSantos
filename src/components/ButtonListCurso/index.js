@@ -8,7 +8,7 @@ const ButtonListCurso =({categorias, filterCategoria}) => {
         <div>
               
             {categorias.map(category=>(
-                <Link to={`/category/${category}`}> 
+              <Link to={`/category/${category}`}>   
                 <button
                 onClick={()=> filterCategoria(category)}
                 key={category}
@@ -18,6 +18,7 @@ const ButtonListCurso =({categorias, filterCategoria}) => {
                 </button>
                 </Link>
             ))}
+             
            
         </div>
     )
