@@ -1,9 +1,5 @@
 import React, {useEffect,useState} from "react";
-<<<<<<< HEAD
 import { useParams } from "react-router-dom";
-import ButtonListCurso from "../ButtonListCurso";
-import ArticlesList from "../ArticlesList";
-=======
 import CharacterCard from '../CharacterCard/index'
 import { Link} from "react-router-dom";
 import Spinner from '../Spinner/index'
@@ -12,19 +8,16 @@ import Spinner from '../Spinner/index'
 
 import {db} from '../../firebase/firebaseConfig.js'
 import { collection, query, getDocs} from "firebase/firestore";
->>>>>>> qa
+
 
 const CharacterList =()=> {
 
     const [articles, setArticles]= useState([]);
-<<<<<<< HEAD
     
     let { id }= useParams();
-=======
     const [isLoading, setIsLoading] =useState(true);
 
     useEffect(()=> {
->>>>>>> qa
 
         const getMakeup = async ()=>  {
             const q = query(collection(db, "makeup"));
@@ -39,7 +32,7 @@ const CharacterList =()=> {
             setTimeout(()=> {
                 setIsLoading(false)
             },2000)
-        },[])
+        },[id])
 
     return (
         <div>
@@ -63,57 +56,6 @@ const CharacterList =()=> {
             )}
         </div>
     )
-
-      /* useEffect(()=>{
-        fetch('/json/data.json',
-        {
-            headers : { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-               }         
-        }
-        )
-        .then(response =>(response.json())         
-        )
-        .then(json => setArticles(json))     
-    }, [id]); */
-
- /*    const AllCategory = [
-        ...new Set(articles.map(article => article.category)),];
- 
-    const [categorias, setCategorias]=useState(AllCategory);
-
-    const filterCategoria = (category)=> {
-<<<<<<< HEAD
-        if(category =='All'){
-            setArticles([articles])
-        }
-        const filterData = articles.filter( article => article.category == category);
-        
-=======
-        const filterData = articles.filter( article => article.category === category);
-
->>>>>>> qa
-        setArticles(filterData)
-       
-    }
-    return (
-        <>
-        <div key={id}>
-                 <ButtonListCurso key={id} categorias={AllCategory} filterCategoria={filterCategoria}>
-                 </ButtonListCurso>
-                 
-            <ArticlesList data ={articles} key={id} />
-<<<<<<< HEAD
-       </div>
-       </>
-)
-=======
-        </div>
-        </>
- 
-    ) */
->>>>>>> qa
 }
 
 export default CharacterList;
