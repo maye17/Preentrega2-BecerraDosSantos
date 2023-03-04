@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const ButtonListCurso =({categorias, filterCategoria}) => {
 
     return(
-        <div>
-              
+        <div key={categorias}>
             {categorias.map(category=>(
                 <Link to={`/category/${category}`}> 
                 <button

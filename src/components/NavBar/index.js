@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import {LinkContainer} from 'react-router-bootstrap'
 import './style.css';
 import logo from '../assets/maiVisage.jpg';
@@ -11,7 +12,10 @@ import CardWidget  from '../CardWidget/index';
 import axios from 'axios';
 
 
+
 const NavBar = () => {
+
+
 
   const [value,setValue]=useState("")
 
@@ -49,9 +53,27 @@ const NavBar = () => {
             <LinkContainer to='/'>
               <Nav.Link className='header__text Link'>Inicio</Nav.Link>
             </LinkContainer> 
-            <LinkContainer to='/Curso'>
-              <Nav.Link className='header__text Link'to='/Curso'>Cursos</Nav.Link>
+
+            <NavDropdown title="Cursos" id="navbarScrollingDropdown">
+            <LinkContainer to='Curso'>
+              <NavDropdown.Item >Todos los Cursos
+              </NavDropdown.Item>
             </LinkContainer>
+             <NavDropdown.Divider/>
+            <LinkContainer to='/categories/Maquillaje'>
+              <NavDropdown.Item >
+                Maquillaje
+              </NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to='/categories/Master'>
+              <NavDropdown.Item>
+                Master
+              </NavDropdown.Item>
+              </LinkContainer>
+            </NavDropdown> *
+           {/* <LinkContainer to='/Curso'>
+              <Nav.Link className='header__text Link'to='/Curso'>Cursos</Nav.Link>
+            </LinkContainer> */}
             <LinkContainer to='/Servicios'> 
               <Nav.Link className='header__text Link'to='/Servicios'>
                 Servicios
@@ -62,7 +84,7 @@ const NavBar = () => {
                 Indumentaria
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer  to='/Contact'>
+            <LinkContainer  to='/Contacto'>
               <Nav.Link className='header__text Link' to='/Contacto'>
                 Contactanos
               </Nav.Link>
