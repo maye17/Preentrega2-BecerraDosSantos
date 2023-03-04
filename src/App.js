@@ -12,8 +12,11 @@ import ItemListContainer from './pages/Cursos/index'
 import Servicios from './pages/Servicios/index'
 import Contacto from './pages/Contacto/index'
 import Indumentaria from './pages/Indumentaria/index';
-import Maquillaje from './pages/Maquillaje/index';
-import Master from './pages/Master';
+/* import Maquillaje from './pages/Maquillaje/index';
+import Master from './pages/Master'; */
+import ClothingDetail from './pages/ClothingDetail/index'
+import Itemcategory from './pages/Category/index'
+/* import Error from './pages/Error'; */
 
 
 
@@ -25,12 +28,15 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>}/>
          <Route path='/Curso' element={<ItemListContainer/>}/>
-         <Route path="/category/Maquillaje" element={<Maquillaje/>}/>
-         <Route path="/category/Master" element={<Master/>}/>
+         <Route path='/categories/:category' element={<Itemcategory/>}/>
+{/*          <Route path="/category/Maquillaje" element={<Maquillaje/>}/>
+         <Route path="/category/Master" element={<Master/>}/> */}
          <Route path='/Servicios' element={<Servicios/>}/>
          <Route path='/Indumentaria' element={<Indumentaria/>}/>
+         <Route path='/clothingDetail/:id' element= {<ClothingDetail/>}/>
          <Route path='/detail/:id' element= {<ItemDetailContainer/>}/>
          <Route path='/Contacto' element={<Contacto/>}/>
+      {/*    <Route path='*' element={<Error/>}/> */}
        </Routes>
        </div>
     </Router>

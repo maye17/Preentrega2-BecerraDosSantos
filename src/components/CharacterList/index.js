@@ -1,19 +1,59 @@
 import React, {useEffect,useState} from "react";
-/* import './style.css' */
-/*  import { Link } from "react-router-dom";  */
-import { useParams } from "react-router-dom";
-import ButtonListCurso from "../ButtonListCurso";
-/* import CharacterCard from "../CharacterCard"; */
-import ArticlesList from "../ArticlesList";
+import CharacterCard from '../CharacterCard/index'
+import { Link} from "react-router-dom";
+import Spinner from '../Spinner/index'
+
+//fIREBASE
+
+import {db} from '../../firebase/firebaseConfig.js'
+import { collection, query, getDocs} from "firebase/firestore";
 
 const CharacterList =()=> {
 
     const [articles, setArticles]= useState([]);
-    
+    const [isLoading, setIsLoading] =useState(true);
 
-    let { id }= useParams();
+    useEffect(()=> {
 
-      useEffect(()=>{
+        const getMakeup = async ()=>  {
+            const q = query(collection(db, "makeup"));
+            const docs =[];
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                docs.push({...doc.data(), id: doc.id})
+            });
+              setArticles(docs);
+            }
+            getMakeup()
+            setTimeout(()=> {
+                setIsLoading(false)
+            },2000)
+        },[])
+
+    return (
+        <div>
+            {isLoading ? (
+                <div className="Spinner">
+                    <Spinner/>
+                </div>
+            ) : (
+            <div className="cards" >
+                <div className="card-list">
+                    {articles.map((article) => {
+                        return(
+                            <Link to={`/detail/${article.id}`}
+                            key={article.id}>
+                                <CharacterCard data = {article}/>
+                            </Link>               
+                        )
+                    })}
+                </div>
+            </div>
+            )}
+        </div>
+    )
+
+      /* useEffect(()=>{
         fetch('/json/data.json',
         {
             headers : { 
@@ -25,17 +65,16 @@ const CharacterList =()=> {
         .then(response =>(response.json())         
         )
         .then(json => setArticles(json))     
-    }, [id]);
+    }, [id]); */
 
-    const AllCategory = [
+ /*    const AllCategory = [
         ...new Set(articles.map(article => article.category)),];
-                    console.log(AllCategory);
  
     const [categorias, setCategorias]=useState(AllCategory);
 
     const filterCategoria = (category)=> {
         const filterData = articles.filter( article => article.category === category);
-        /* console.log(filterData); */
+
         setArticles(filterData)
     }
     return (
@@ -45,76 +84,9 @@ const CharacterList =()=> {
                  </ButtonListCurso>
             <ArticlesList data ={articles} key={id} />
         </div>
-{/*         <div>
-              <Link to={`/category/Master`}> 
-                 <ButtonListCurso categorias={AllCategory} filterCategoria={filterCategoria}>
-                 </ButtonListCurso>
-             </Link>
-            <ArticlesList data ={cursos} key={id} />
-        </div> */}
         </>
-     /*    <div>
-            <div className="cards">
-                <div className="card-list">
-                    {cursos.map((curso) => {
-                        return (
-                            <div  key={curso.id}>
-                                <Link to={`/curso/${curso.id}`}> 
-                                    <CharacterCard data = {curso}   />
-                                </Link>
-                            </div>
-                        )
-                        })
-                    }
-                </div> 
-            </div>         
-        </div> */
  
-    )
-
- 
-
- 
-                    /* 
-
-    const filterCategory =(category)=> {
-       
-        if(category ==='All'){
-            setCurso(cursos)
-            return
-        }
-        const filterData =cursos.filter(curso =>curso.category===category)
-        setCurso(filterData)
-        } 
-
-        const [categories, setCategories]= useState(allCategories);
-
-    return (
-        <div key={allCategories.id}>
-            {categories.map((category) => {
-                    return (
-                        <div key={allCategories.id}>
-                             <Link to={`/Cursocategory/${category.id}`}> 
-                                <ButtonListCurso categories={allCategories} filterCategory={filterCategory}>
-                                </ButtonListCurso>
-                            </Link>
-                        </div>
-                
-                    )})}
-            <div className="card-list"  key={cursos.id}>
-                {cursos.map((curso) => {
-                    return (
-                        <div  key={cursos.id}>
-                            <Link to={`/curso/${curso.id}`}> 
-                            <CharacterCard data = {curso}></CharacterCard>
-                            </Link>
-                        </div>
-                    )
-                    })
-                }
-            </div>
-        </div>
-) */
+    ) */
 }
 
 export default CharacterList;
