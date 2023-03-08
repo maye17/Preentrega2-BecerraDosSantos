@@ -102,8 +102,9 @@ const NavBar = () => {
             />
             <Button className='header__text' type="submit" variant="outline-primary">Search</Button>
           </Form>
+          <LinkContainer to='/Cart'>
           <CardWidget></CardWidget>
-          <p className='CartWidget__info'>5</p>
+          </LinkContainer>
         </Navbar.Collapse>
       </Container>
     </Navbar>

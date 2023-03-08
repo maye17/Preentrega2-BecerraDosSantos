@@ -5,7 +5,8 @@ import './style.css'
 
 
 const CharacterCard = ({data})=> {
-   
+
+
     const prince_sign='$';
     return (
         <div>

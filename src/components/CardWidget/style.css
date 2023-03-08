@@ -2,3 +2,9 @@
     padding: 20px;
  
  }
+ .info__carrito {
+     font-size: 28px;
+     font-style:normal;
+     font-weight: bold;
+     color: white;
+ }

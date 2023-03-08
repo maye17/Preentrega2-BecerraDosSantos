@@ -2,7 +2,8 @@ import React, {useEffect,useState} from "react";
 import { useParams } from "react-router-dom";
 import CharacterCard from '../CharacterCard/index'
 import { Link} from "react-router-dom";
-import Spinner from '../Spinner/index'
+import Spinner from '../Spinner/index';
+
 
 //fIREBASE
 
