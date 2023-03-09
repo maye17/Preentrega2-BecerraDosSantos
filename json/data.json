@@ -1,0 +1,66 @@
+[
+    {
+        "id":1,
+        "name":"AutoMaquillaje",
+        "image":"../image/AutoMaquillaje.jpg",
+        "price":50,
+        "description":"Conocimientos básicos de skincare",
+        "category":"Maquillaje"
+     },
+     {
+        "id":2,
+        "name":"Master en colorimetría",
+        "image":"../image/colorimetria.jpg",
+        "price":190,
+        "description":"Master en colorimetría",
+        "category":"Maquillaje"
+     },
+     {
+        "id":3,
+        "name":"Master en Novias",
+        "image":"../image/maquillaje_novia.jpg",
+        "price":370,
+        "description":"Master en Novias",
+        "category":"Master"
+     },
+     {
+        "id":4,
+        "name":"Experto en Piel Madura",
+        "image":"../image/maquillajePielMadura.jpg",
+        "price":170,
+        "description":"Experto en Piel Madura",
+        "category":"Master"
+     },
+     {
+        "id":5,
+        "name":"Maquillaje Profesional Nivel 1",
+        "image":"../image/MaquillajeNivel1.jpg",
+        "price":40,
+        "description":"Conocimientos de SkinCare",
+        "category":"Master"
+     },
+     {
+        "id":6,
+        "name":"Maquillaje Profesional Nivel 2",
+        "image":"../image/MaquillajeNivel2.jpg",
+        "price":40,
+        "description":"Conocimientos de SkinCare",
+        "category":"Master"
+     },
+     {
+        "id":7,
+        "name":"Maquillaje párpados pequeños",
+        "image":"../image/parpados.jpg",
+        "price":40,
+        "description":"Maquillaje párpados pequeños",
+        "category":"Maquillaje"
+     },
+     {
+        "id":8,
+        "name":"Maquillaje para fotografía",
+        "image":"../image/MaquillajeFotografia.jpg",
+        "price":40,
+        "description":"Maquillaje para sesión de fotos",
+        "category":"Maquillaje"
+     }
+    ]
