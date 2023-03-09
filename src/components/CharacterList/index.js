@@ -36,7 +36,7 @@ const CharacterList =()=> {
         },[id])
 
     return (
-        <div>
+        <div className="">
             {isLoading ? (
                 <div className="Spinner">
                     <Spinner/>

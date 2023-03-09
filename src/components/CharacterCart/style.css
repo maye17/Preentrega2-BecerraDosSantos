@@ -1,0 +1,42 @@
+.box__character {
+    
+    display: flex;
+    flex-flow: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #a50ea5;;
+}
+
+
+.box__character-cards {
+    display: flex;
+    padding: 4px;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #a50ea5;;
+    margin: 12px;
+    width: 30rem;
+    transition: all 0.5s;
+}
+
+
+.box__character-cards img {
+    justify-content: center;
+      width: 200px;
+      height: 220px;
+      padding: 4px 8px; 
+}
+
+.box__character-info {
+    font-size: 14px;
+    margin: 2px;
+    padding: 2px;
+}
+
+..box__character-info p {
+    margin-bottom: 2px;
+    padding: 2px;
+}

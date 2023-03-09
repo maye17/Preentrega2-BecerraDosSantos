@@ -13,8 +13,10 @@ const CardWidget = () => {
 
     return(
         <div>
-            <FaShoppingCart style={{color: 'white ', fontSize: '30px', padding:'3px'}} />
+
+            <FaShoppingCart style={{color: 'white ', fontSize: '30px', padding:'3px'}} to='/Cart' />         
             <span className='info__carrito'>{totalProduct() || ''}</span>
+
         </div>
     )
 }

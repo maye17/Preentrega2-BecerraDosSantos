@@ -1,3 +1,12 @@
+.cards {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  margin: 18px;
+  }
+
+
 
 .cards__container {
     display: grid;

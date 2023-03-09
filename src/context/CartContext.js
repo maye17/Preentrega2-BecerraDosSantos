@@ -1,4 +1,6 @@
 import React, { createContext, useState, useContext} from "react";
+import { toast } from 'react-toastify';
+
 
 //creando el context
  const CartContext = createContext([]);
@@ -27,17 +29,15 @@ export const useCartContext = () => useContext(CartContext);
 
     //precio total de compra
 
-    const precioTotal = ()=> {
-        return(
-            cart.reduce((precio,art) => precio + art.cantidad * art.precio,0)
-            )
-    }
-
+    const totalPrice = () => {
+        return cart.reduce((precio, art) => precio + art.cantidad * art.precio,0) 
+    };         
+     
     const totalProduct = ()=> {
         return(
             cart.reduce((cantidadAcumulada, productoActual) => cantidadAcumulada + productoActual.cantidad,0)
         )
-    }
+    };
     
     console.log('carrito:', cart);
    
@@ -51,12 +51,20 @@ export const useCartContext = () => useContext(CartContext);
     
         )
             
-    }
+    };
     
     //eliminar productos del carrito
-    const removeCart = (id) => {
-        setCart(cart.filter(article => article.id !== id))
-    }
+    const removeCart = (id) => setCart(cart.filter(article => article.id !== id),toast.error('El producto fue eliminado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        }));
+      
 
     return (
         <CartContext.Provider value= {{
@@ -64,7 +72,7 @@ export const useCartContext = () => useContext(CartContext);
             isInCart,
             removeCart,
             addProduct,
-            precioTotal,
+            totalPrice,
             totalProduct,
             cart
        

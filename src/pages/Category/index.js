@@ -37,7 +37,7 @@ const Itemcategory = ()=> {
         },[category])
 
     return (
-        <div>
+        <div className="cards" >
             <h1>{category}</h1>
             {isLoading ? (
                 <div className="Spinner">

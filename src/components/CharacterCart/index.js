@@ -1,23 +1,25 @@
 import React from "react";
 import { useCartContext } from "../../context/CartContext";
+import './style.css'
+const CharacterCart =({product})=> {
 
-const CharacterCart =({article})=> {
-const {removeCart} =useCartContext;
-
+const {removeCart} =useCartContext();
+const prince_sign='$';
     return(
-        <>
-            <div>
-                <img src={article.image} alt= {article.name}/>
-                <div>
-                    <p> Titulo: {article.name}</p>
-                    <p>Cantidad: {article.cantidad}</p>
-                    <p>Precio: {article.price}</p>
-                    <p>Subtotal: {article.cantidad}*{article.price}</p>
-                    <button onClick={()=>removeCart(article.id)}>Eliminar</button>
-                </div>
-
-            </div>
-        </>
+        <div className="container-sm">
+            <div className="box__character">
+                <div className="box__character-cards">
+                    <img src={product.image} alt="imagen"/>
+                        <div className="box__character-info">
+                            <p> Curso: {product.name}</p>
+                            <p>Cantidad: {product.cantidad}</p>
+                            <p>Precio: {product.price}</p>
+                            <p>Subtotal: {prince_sign} {product.cantidad*product.price}</p>
+                            <button className="btn btn-danger" onClick={()=>removeCart(product.id)}>Eliminar</button>
+                        </div>
+                        </div>
+                    </div>
+        </div>
     )
 }
 

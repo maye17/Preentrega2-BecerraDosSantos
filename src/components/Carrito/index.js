@@ -1,27 +1,36 @@
 import React from "react";
-import { useCartContext } from "../../context/CartContext";
+import {useCartContext}  from "../../context/CartContext";
 import CharacterCart from "../CharacterCart";
+import { Link } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './style.css'
 
 
 const Cart =()=> {
-    const [cart, precioTotal] = useCartContext();
+    const {cart, totalPrice } = useCartContext();
 
-    if(cart.lenght ===0){
+    if(cart.lenght === 0){
         return(
             <>
-                <div>
+               
                     <p>El carrito esta vacío</p>
-                </div>
+                    <Link to='/'>Elegir una opción</Link>
+
             </>
-        )
+        );
     }
 
 
     return(
         <div>
-            {cart.map(article => <CharacterCart key =   {article.id} product ={article} />)
+            {
+            cart.map(product => <CharacterCart key =   {product.id} product ={product} />)
             }
-            <p>Precio Total:</p>
+            <p className="box__total">
+                Total a pagar: {totalPrice()}
+            </p>
+            <ToastContainer />
         </div>
     )
 }

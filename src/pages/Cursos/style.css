@@ -7,6 +7,12 @@
     margin: 18px;
     }
 
+.cards h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
