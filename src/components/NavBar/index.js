@@ -56,11 +56,6 @@ const NavBar = () => {
                 Servicios
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/Indumentaria'> 
-              <Nav.Link className='header__text Link'to='/Indumentaria'>
-                Indumentaria
-              </Nav.Link>
-            </LinkContainer>
             <LinkContainer  to='/Contacto'>
               <Nav.Link className='header__text Link' to='/Contacto'>
                 Contactanos

@@ -12,8 +12,6 @@ import ItemDetailContainer from './pages/ItemDetailContainer/index'
 import ItemListContainer from './pages/Cursos/index'
 import Servicios from './pages/Servicios/index'
 import Contacto from './pages/Contacto/index'
-import Indumentaria from './pages/Indumentaria/index';
-import ClothingDetail from './pages/ClothingDetail/index'
 import Itemcategory from './pages/Category/index'
 
 import CartProvider  from './context/CartContext'
@@ -32,8 +30,6 @@ function App() {
          <Route path='/Curso' element={<ItemListContainer/>}/>
          <Route path='/categories/:category' element={<Itemcategory/>}/>
          <Route path='/Servicios' element={<Servicios/>}/>
-         <Route path='/Indumentaria' element={<Indumentaria/>}/>
-         <Route path='/clothingDetail/:id' element= {<ClothingDetail/>}/>
          <Route path='/detail/:id' element= {<ItemDetailContainer/>}/>
          <Route path='/Contacto' element={<Contacto/>}/>
          <Route path='/Cart' element={<Cart/>}/>
