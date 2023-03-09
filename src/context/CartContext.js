@@ -28,16 +28,19 @@ export const useCartContext = () => useContext(CartContext);
     }
 
     //precio total de compra
-
-    const totalPrice = () => {
-        return cart.reduce((precio, art) => precio + art.cantidad * art.precio,0) 
-    };         
+    
      
     const totalProduct = ()=> {
         return(
             cart.reduce((cantidadAcumulada, productoActual) => cantidadAcumulada + productoActual.cantidad,0)
         )
     };
+
+    const totalPrice = () => {
+        return cart.reduce((totalPrice, product) => {
+          return totalPrice + (product.price * product.cantidad);
+        }, 0);
+      };
     
     console.log('carrito:', cart);
    
