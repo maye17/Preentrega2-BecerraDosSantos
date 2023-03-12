@@ -16,8 +16,6 @@
     text-decoration: none;
     background-color: #ea7ed8;
     border-radius: 18% 150% 15% 25%;
-    
-   
 
   }
 
@@ -110,4 +108,31 @@
         color: #b9329a;
         background: white;
         border-color: #150c12; 
+      }
+
+
+      @media(max-width:576px){
+
+        .box__cards {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 10px;
+          margin: 0;
+          text-decoration: none;
+          background-color: #ea7ed8;
+          border-radius: 25% 15% 90% 15%;
+      
+        }
+
+        
+  .box__cards img {
+    justify-content: center;
+    width: 300px;
+    height: 320px;
+    padding: 4px 8px; 
+    border-top-left-radius: 15%;
+    border-bottom-left-radius: 15%;
+    
+}
+
       }

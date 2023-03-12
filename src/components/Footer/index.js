@@ -5,7 +5,9 @@ const Footer =()=> {
     return(
         <>
             <div className="footer">
-            Todos los derechos reservados realizado por Mayerlin Becerra Dos Santos @2023
+                <p>
+                ©2023 Todos los derechos reservados desarrollado por: Mayerlin Becerra Dos Santos 
+                </p>
             </div>
         </>
     )

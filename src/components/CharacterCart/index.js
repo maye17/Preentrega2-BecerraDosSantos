@@ -1,6 +1,9 @@
 import React from "react";
 import { useCartContext } from "../../context/CartContext";
 import './style.css'
+import { ToastContainer } from 'react-toastify';
+
+
 const CharacterCart =({product})=> {
 
 const {removeCart} =useCartContext();
@@ -18,8 +21,10 @@ const prince_sign='$';
                             <p>Precio: {product.price}</p>
                             <p>Subtotal: {prince_sign} {product.cantidad*product.price}</p>
                             <button className="btn btn-danger" onClick={()=>removeCart(product.id)}>Eliminar</button>
+                            <ToastContainer /> 
                         </div>
                         </div>
+                            
                     </div>
         </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext} from "react";
 import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 //creando el context
@@ -47,9 +48,7 @@ export const useCartContext = () => useContext(CartContext);
       };
      
     
-        //limpiar el carrito
-    const CleanCart = ()=> setCart([]);
-    
+
     const isInCart =(id)=> {
         return(
             cart.find(article => article.id == id) ? true:false
@@ -60,21 +59,21 @@ export const useCartContext = () => useContext(CartContext);
     
     //eliminar productos del carrito
     const removeCart = (id) =>( setCart(cart.filter(article => article.id !== id),
-    toast.error('El producto fue eliminado!', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        })));
+        toast.error('Producto eliminado!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            })
+        ));
       
 
     return (
         <CartContext.Provider value= {{
-            CleanCart,
             isInCart,
             removeCart,
             addProduct,
@@ -85,7 +84,9 @@ export const useCartContext = () => useContext(CartContext);
        }}
         >
             {children}
+            <ToastContainer />   
         </CartContext.Provider>
+        
     )
 }
 

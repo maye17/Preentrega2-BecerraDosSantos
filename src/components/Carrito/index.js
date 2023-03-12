@@ -8,6 +8,10 @@ import './style.css'
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
 import { toast } from 'react-toastify';
+import MesaggeBuy from '../MesaggeBuy/index'
+import Swal from 'sweetalert2';
+
+
 
 /* orders */
 const initialState ={
@@ -22,6 +26,7 @@ const initialState ={
 const Cart =()=> {
     const {cart, totalPrice } = useCartContext();
     const [values, setValues] = useState(initialState);
+    const [datoId, setDatoId] =useState("")
 
 
     //generando orden de compra
@@ -38,21 +43,22 @@ const Cart =()=> {
     
 
 
- /*    const handleOnSubmit = async(e) => {
-        const docRef = await addDoc(collection(db,'orders '),
-        {
-            values,
-            items:cart.map(product => ({id:product.id, title: product.name, price:product.price, cantidad: product.cantidad})),
-        total: totalPrice(),
-        }
-        )
-    
-    } */
 
     const handleClick = ()=> {
+
+        if(values.name =="" && values.lastname =="" && values.email =="" && values.phone=="") {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Debe completar los campos del formulario',
+                icon: 'error',
+                confirmButtonText: 'Cerrar'
+              })
+            
+        }else {
         const db = getFirestore();
-        const ordersCollection =collection(db, 'orders');
+        const ordersCollection = collection(db, 'orders');
         addDoc(ordersCollection, order)
+        .then(({id}) => setDatoId(id))
         toast.success('compra generada con éxito!!', {
             position: "top-right",
             autoClose: 3000,
@@ -62,9 +68,14 @@ const Cart =()=> {
             draggable: true,
             progress: undefined,
             theme: "light",
-            }) 
-        
+            })
+
+           setValues(initialState);
     }
+}
+
+  
+        
 
     if(cart.length === 0){
         return(
@@ -127,6 +138,9 @@ const Cart =()=> {
                         Total a pagar: {totalPrice()}
                     </p>
                     <button className="btn btn-primary" onClick={handleClick}>Generar Compra</button>
+                    <div className="box__mesagge">
+                        {datoId ? <MesaggeBuy  datoId={datoId}/> : null }
+                    </div>
                 </div>
                 
             </div>   

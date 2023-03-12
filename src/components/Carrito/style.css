@@ -64,12 +64,19 @@
     margin: 20px 30px;
     background: white;
     border-color: #f106a2;
-    width: 50%;
+    width: 70%;
     background-image: url("../assets/fondo-contacto.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
     border-radius: 8px;
+}
+
+.box__formulario h2 {
+    font-weight: bolder;
+    text-decoration: underline;
+    font-style: italic;
+    
 }
 
 .box__formulario-form {
@@ -78,4 +85,35 @@
 
 .form-text {
     padding: 15px;
+}
+
+.box__mesagge {
+    width: 60%;
+    display: flex;
+    margin: 4rem;
+}
+
+@media (max-width:576px) {
+
+    .box__cart {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 4;
+    }
+    
+
+    .box__formulario {
+        margin: 20px 20px;
+        background: white;
+        border-color: #f106a2;
+        width: auto;
+        background-image: url("../assets/fondo-contacto.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10px;
+        border-radius: 8px;
+        justify-content: center;
+    }
+    
+
 }
