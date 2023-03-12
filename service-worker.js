@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Preentrega2-BecerraDosSantos/precache-manifest.83e223254e862b3bebc9430df9f464e6.js"
+  "/Preentrega2-BecerraDosSantos/precache-manifest.f9e7e9f37c5ebfb6c8b04ddbaab07d9a.js"
 );
 
 workbox.clientsClaim();
