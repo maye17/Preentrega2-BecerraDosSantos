@@ -58,8 +58,10 @@
       font-size: 18px;
       font-family: 'Nunito Sans', sans-serif;
       font-style: oblique;
-      font-weight: bold; }
+      font-weight: bold;
+     }
       .cards__container-banner button:hover {
         color: #2d0223;
         background: white;
-        border-color: #f106a2; }
+        border-color: #f106a2;
+       }

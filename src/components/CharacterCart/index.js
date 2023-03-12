@@ -6,6 +6,8 @@ const CharacterCart =({product})=> {
 const {removeCart} =useCartContext();
 const prince_sign='$';
     return(
+        <>
+        <div className="box__charac">
         <div className="container-sm">
             <div className="box__character">
                 <div className="box__character-cards">
@@ -20,6 +22,8 @@ const prince_sign='$';
                         </div>
                     </div>
         </div>
+        </div>
+        </>
     )
 }
 

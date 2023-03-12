@@ -1,25 +1,30 @@
+
 .box__character {
     
-    display: flex;
+    /* display: flex;
     flex-flow: nowrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid #a50ea5;;
+    align-items: right;
+     */
+    display: grid;
+  flex-wrap: column nowrap;
+  align-content: space-between;
+
 }
 
 
 .box__character-cards {
     display: flex;
-    padding: 4px;
+    padding: 2px;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     border: 1px solid #a50ea5;;
-    margin: 12px;
-    width: 30rem;
-    transition: all 0.5s;
+    margin:30px auto;
+    width: 20rem;
+
 }
 
 
@@ -36,7 +41,8 @@
     padding: 2px;
 }
 
-..box__character-info p {
+.box__character-info-parr {
+    font-size: 14px;
     margin-bottom: 2px;
     padding: 2px;
 }

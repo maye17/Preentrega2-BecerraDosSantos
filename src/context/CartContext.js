@@ -19,12 +19,16 @@ export const useCartContext = () => useContext(CartContext);
         let article = cart.find(article => article.id ===item.id);
         if(article){
             article.cantidad += cantidad;
-            newCart = [...cart];
+            newCart = [...cart]
+              
         }else {
             article= {...item, cantidad: cantidad};
             newCart = [... cart, article]
         }
         setCart(newCart)
+
+
+
     }
 
     //precio total de compra
@@ -41,9 +45,7 @@ export const useCartContext = () => useContext(CartContext);
           return totalPrice + (product.price * product.cantidad);
         }, 0);
       };
-    
-    console.log('carrito:', cart);
-   
+     
     
         //limpiar el carrito
     const CleanCart = ()=> setCart([]);
@@ -57,7 +59,8 @@ export const useCartContext = () => useContext(CartContext);
     };
     
     //eliminar productos del carrito
-    const removeCart = (id) => setCart(cart.filter(article => article.id !== id),toast.error('El producto fue eliminado!', {
+    const removeCart = (id) =>( setCart(cart.filter(article => article.id !== id),
+    toast.error('El producto fue eliminado!', {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -66,7 +69,7 @@ export const useCartContext = () => useContext(CartContext);
         draggable: true,
         progress: undefined,
         theme: "light",
-        }));
+        })));
       
 
     return (

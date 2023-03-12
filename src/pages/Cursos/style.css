@@ -26,6 +26,23 @@
 
 
 
+@media (max-width:1200px) {
+
+    .cards {
+        padding: 4px;
+        margin: 10px;
+    }
+    
+    .card-list {
+        display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    
+    
+    }
+    
+    }
+
+
 @media (max-width:992px) {
 
 .cards {

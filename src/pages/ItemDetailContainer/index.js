@@ -40,8 +40,8 @@ const ItemDetailContainer =()=> {
                 <Spinner/>
             </div>
         ) : (
-        <div className="cards" >
-            <div className="card-list">
+        <div>
+            <div>
                 {article.map((art) => {
                     return(
                         <ItemCard dataDetail = {art} key={art.id}/>

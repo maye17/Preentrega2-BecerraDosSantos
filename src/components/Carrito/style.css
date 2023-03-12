@@ -1,9 +1,81 @@
 .box__total{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-end;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder;
     font-size: 22px;
     
+}
+
+
+
+.btn-volver {
+    color: #e7e7fa;
+      display: inline-block;
+      margin: 18px;
+      padding: 12px;
+      text-align: center;
+      border: 3px black solid;
+      border-radius: 8px;
+      border-color: azure;
+      background: #212020;
+      font-size: 18px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-style: oblique;
+      font-weight: bold;
+}
+
+.btn-volver:hover {
+    color: #8b106e;
+    background: white;
+    border-color: #f106a2;
+}
+
+.box__vacio {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.box__vacio-info {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.box__cart {
+/*     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    align-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4;
+    
+}
+
+
+.box__formulario {
+    margin: 20px 30px;
+    background: white;
+    border-color: #f106a2;
+    width: 50%;
+    background-image: url("../assets/fondo-contacto.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.box__formulario-form {
+    border: #f106a2 !important;
+}
+
+.form-text {
+    padding: 15px;
 }

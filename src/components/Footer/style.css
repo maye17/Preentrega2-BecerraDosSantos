@@ -1,0 +1,15 @@
+.footer {
+    display: inline-block;
+    position: absolute;
+    
+    background-color: rgb(0, 0, 0, .1);
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    
+}
