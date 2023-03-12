@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Preentrega2-BecerraDosSantos/precache-manifest.f9e7e9f37c5ebfb6c8b04ddbaab07d9a.js"
+  "/EntregaFinalReact-BecerraDosSantos/precache-manifest.cfd373ea330235e01a15cb4274349418.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Preentrega2-BecerraDosSantos/index.html", {
+workbox.routing.registerNavigationRoute("/EntregaFinalReact-BecerraDosSantos/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
